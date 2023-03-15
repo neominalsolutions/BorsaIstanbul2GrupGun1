@@ -1,9 +1,15 @@
 {
   "name": "hooks-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "IK module geliştirilidi. Özlük hakları ile ilgili",
+  "comment5":"",
+  "comment0":"IK module 1.0.0 (majör)",
+  "comment":"IK daki bordo uygulması 1.1.0 (minör)",
+  "comment3":"bordo-uygulması 1.1.1 (bug fix)",
+  "comment1":"IK özlük modül uygulaması 1.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=4201",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
