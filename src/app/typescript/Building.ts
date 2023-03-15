@@ -1,8 +1,3 @@
-import { ApiClient } from './ApiClient';
-import { CategoryResponse } from './CategoryResponse';
-import { ProductRequest } from './ProductRequest';
-import { ProductResponse } from './ProductResponse';
-
 function identity<Type>(arg: Type): number {
   return Number(arg);
 }
@@ -19,10 +14,21 @@ let outputNumber = identity<number>(56); // number çıktısı
 //   return this.httpClient.post<AlgoFormModel>(API_ALGO_FORM_URL+'/save' , algo_form);
 // }
 
-var pApiClient = new ApiClient<ProductRequest, ProductResponse>();
-var response1 = pApiClient.get<ProductRequest>();
-pApiClient.post(new CategoryResponse());
+export class ApiClient<TRequest, TResponse> {
+  get(req: TRequest) {}
 
-var cApiClient = new ApiClient<CategoryRequest, CategoryResponse>();
-var response2 = cApiClient.get<CategoryRequest>();
-cApiClient.post(new CategoryResponse());
+  post(req: TRequest): TResponse {
+    return {} as TResponse;
+  }
+}
+
+export class ProductRequest {}
+
+export class ProductResponse {}
+
+export class CategoryRequest {}
+
+export class CategoryResponse {}
+
+var pApiClient = new ApiClient<ProductRequest, ProductResponse>();
+pApiClient.get(new CategoryRequest()); // ProductRequest gönderebilmemiz gerekirdi js de generic kavramı olmadığından dolayı req nesnesini any olarak tanımlıyor. Kullanırken dikkatli olalım
