@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 //@ işaretli yapılar decleration
 @NgModule({
   declarations: [
-    AppComponent, // Uygulama içerisindeki geliştirmeleri yani arayüzler import ettiğimiz yer, component,directive ve pipe tanımlarını buraya yapıyoruz.
+    AppComponent,
+    ParentComponent,
+    ChildComponent, // Uygulama içerisindeki geliştirmeleri yani arayüzler import ettiğimiz yer, component,directive ve pipe tanımlarını buraya yapıyoruz.
   ],
   imports: [
     BrowserModule, // 3rd programlardaki modüllerimiz yada kendi geliştiridiğimiz modüller (SharedModule,NgxTranslateModule,MaterialModule) // modüllerin içerisindeki özelliklere erişim sağlanır.

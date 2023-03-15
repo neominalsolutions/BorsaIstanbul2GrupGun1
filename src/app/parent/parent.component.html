@@ -1,0 +1,34 @@
+<p>parent works!</p>
+
+<!-- bu componente dışarıdan geliştirme anında bir element göndericez popup olabilir, header, footer -->
+
+<!-- buraya birşeyler gelicek -->
+<ng-content></ng-content>
+<!-- yani component dışarıdan geçilen componentin doma basıldığı ilk anı yakalıyıp nasıl müdehale edebiliriz. AfterContentInit -->
+
+<p>
+  <!-- property binding {{ interpolation }} -->
+  id: {{id}}
+</p>
+
+<button (click)="showMessage()">Show Message</button>
+
+<p #paraf>
+  Paragraf
+</p>
+
+<input #inptRef />
+
+<!-- # ile referans tanımlaması yapıyoruz -->
+<!-- parent component içerisinden child componente ulaşabiliyoruz. -->
+<app-child #child></app-child>
+<!-- parent component içerisindeki bir child componentin sayfa açılışında refreshlenmesi yada bir eylemi yerine getirmesini istersek bu anı afterviewInit hookda yakalayabiliriz -->
+
+
+
+
+<!-- <base-component></base-component>
+
+<div>
+  adsad
+</div> -->

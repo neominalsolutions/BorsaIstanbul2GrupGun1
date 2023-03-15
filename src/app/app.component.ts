@@ -29,6 +29,11 @@ export class AppComponent {
 
   person2: Person = new Person('ali', 1); // şema bazlı nesne tanımı intellisense sağlar.
 
+  parentItems = [1, 2, 3];
+
+  id: number = 1;
+  visible: boolean = true;
+
   constructor() {
     this.person.friends.forEach((friend: any) => {
       console.log('friend', friend);
@@ -42,5 +47,10 @@ export class AppComponent {
     // Generic Class
     // Interfaces
     // Class based Inheritance
+  }
+
+  showMessage() {
+    alert('merhaba');
+    this.id = 3;
   }
 }
