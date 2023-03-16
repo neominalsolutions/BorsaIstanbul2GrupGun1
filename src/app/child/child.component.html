@@ -1,1 +1,55 @@
-<p>child works!</p>
+<div>
+  Child Component Div
+</div>
+
+<ng-container>
+  <div>
+    Child Component Container
+  </div>
+</ng-container>
+
+
+<!-- <ng-container [style.padding]="'10px'">
+  <app-selector></app-selector>
+  <app-grid></app-grid>
+</ng-container> -->
+
+
+<button (click)="visible = !visible">Visible</button>
+
+
+<!--ng-container sayfadaki düzeni bozmadan elementlerimizi veya componentlerimizi kapsayıcı bir yöntem -->
+<ng-container *ngIf="visible then temp1 else temp2"></ng-container>
+
+<div *ngIf="visible">
+  Child Component Template
+</div>
+<div *ngIf="!visible">
+  Child Component Template2
+</div>
+
+<!-- ng-template kendi başına görünmez sadece bir if durumuna göre sayfaya yansıyabilir. -->
+
+<!-- modal component -->
+<ng-template #temp1>
+  Child Component Template
+  <p>
+    paragraf
+  </p>
+  <h1>
+    asdsad
+  </h1>
+</ng-template>
+
+
+<ng-template #temp2>
+  Child Component Template2
+  <!-- <test-modal></test-modal> -->
+</ng-template>
+
+<!-- <ng-template ngFor let-hero [ngForOf]="heroes"
+  let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+  <div [class.odd]="odd">
+    ({{i}}) {{hero.name}}
+  </div>
+</ng-template> -->

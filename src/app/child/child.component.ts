@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./child.component.css'],
 })
 export class ChildComponent {
+  visible: boolean = false;
+
   refresh() {}
 
   loadData(data: any) {}

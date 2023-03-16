@@ -3,29 +3,35 @@
 
 
 <!-- (eventName) -->
-<button (click)="parentItems = [5,6,7,8]"> Item değiştir.</button>
+<!-- <button (click)="parentItems = [5,6,7,8]"> Item değiştir.</button> -->
 
 
-<button (click)="visible = !visible">
+<!-- <button (click)="visible = !visible">
   Doma gir Doma çık veya Göster Gizle
   Durum : {{visible}}
-</button>
+</button> -->
 
 <!-- *ngIf directive domda bir elementin doma append yada remove olmasını sağlar. -->
 
 <!-- *ngIf ile yetkisel domda gösterilmesi gereken durumları kontrol edebiliriz. component yaşam döngüsünün sonlandırılması ve component init olmasını sağlıyor -->
 
-<h1>NgIf Çalışan Bölge</h1>
+<!-- <h1>NgIf Çalışan Bölge</h1> -->
 
 <!-- [attributename]  -->
-<app-parent *ngIf="visible" [items]="parentItems" [name]="'ali'">
+<!-- ng-content -->
+<!-- content -->
+<!-- <app-parent *ngIf="visible" [items]="parentItems" [name]="'ali'">
   <h1 #content>Ng Content</h1>
-  <!-- content -->
+
 </app-parent>
 
-<h1>Hidden Çalışan Bölge</h1>
+<h1>Hidden Çalışan Bölge</h1> -->
 
 <!-- hidden != ngIf -->
 
 <!-- component style display:none block -->
 <!-- <app-parent [hidden]="!visible" [items]="parentItems" [name]="'ali'"></app-parent> -->
+
+
+<!-- 2.Örnek Parent Child İlişkisi -->
+<app-todo></app-todo>

@@ -1,0 +1,38 @@
+editMode: {{editMode}}
+<br>
+
+<ng-container>
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <!-- input template ref örneği -->
+    <!-- [value] angular value directive -->
+    <!-- two way binding örneği -->
+    <!-- arayüzde eğer bir servis değerinin propertysine erişmezsek $any servis ile template de işlem yapabiliriz.  -->
+    <input #inpt matInput placeholder="Ex. Pizza" [value]="InputValue.value"
+      (change)="InputValue.value = $any($event.target).value">
+  </mat-form-field>
+  <!-- inputa ait referansı add methodu içerisine gönderdim -->
+
+  <!-- <button (click)="add(inpt)" mat-button color="primary">
+    {{InputValue != '' ? 'Edit':'Add'}}
+  </button> -->
+
+  <div *ngIf="editMode == false then addButtonTemp else editButtonTemp"></div>
+
+
+</ng-container>
+
+<!-- 2 den fazla bir koşul varsa ngSwitchcase -->
+
+
+<ng-template #addButtonTemp>
+  <button (click)="add(inpt)" mat-button color="primary">
+    Ekle
+  </button>
+</ng-template>
+
+<ng-template #editButtonTemp>
+  <button (click)="update(inpt)" mat-button color="secondary">
+    Edit
+  </button>
+</ng-template>

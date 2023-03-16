@@ -1,0 +1,16 @@
+.active {
+  color:'yellow';
+  background-color: aqua;
+}
+
+.passive {
+  color:'grey';
+  background-color: burlywood;
+}
+
+
+.wrapper {
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
+}
