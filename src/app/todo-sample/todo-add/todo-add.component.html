@@ -8,8 +8,8 @@ editMode: {{editMode}}
     <!-- [value] angular value directive -->
     <!-- two way binding örneği -->
     <!-- arayüzde eğer bir servis değerinin propertysine erişmezsek $any servis ile template de işlem yapabiliriz.  -->
-    <input #inpt matInput placeholder="Ex. Pizza" [value]="InputValue.value"
-      (change)="InputValue.value = $any($event.target).value">
+    <input #inpt matInput placeholder="Ex. Pizza" [value]="InputValue"
+      (change)="InputValue = $any($event.target).value">
   </mat-form-field>
   <!-- inputa ait referansı add methodu içerisine gönderdim -->
 

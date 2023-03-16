@@ -3,8 +3,8 @@ selected: {{selected | json}}
 
 <ng-container>
   <!-- $event service ile emit edilen değeri dinleriz.Angular built'in service -->
-  <app-todo-add [ngStyle]="{'padding':todoListConfig.padding,'margin':'50px'}" [InputValue]="selected"
-    [editMode]="selected.index == -1 ? false:true" (itemAdded)="onItemAdded($event)"
+  <app-todo-add #appTodoAdd [ngStyle]="{'padding':todoListConfig.padding,'margin':'50px'}" [InputValue]="selected"
+    [editMode]="selected == '' ? false:true" (itemAdded)="onItemAdded($event)"
     (itemUpdated)="onItemUpdated($event)"></app-todo-add>
 </ng-container>
 
@@ -28,8 +28,7 @@ selected: {{selected | json}}
 
       <ng-container *ngFor="let item of todolist let i=index">
 
-        <mat-list-item [ngClass]="selected.index == i ? 'active':''" (click)="onSelect(item, i)"
-          role="listitem">{{i}}.index
+        <mat-list-item [ngClass]="selected == item ? 'active':''" (click)="onSelect(item)" role="listitem">{{i}}.index
           {{item}}</mat-list-item>
 
         <mat-divider></mat-divider>
