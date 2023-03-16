@@ -17,12 +17,18 @@ editMode: {{editMode}}
     {{InputValue != '' ? 'Edit':'Add'}}
   </button> -->
 
-  <div *ngIf="editMode == false then addButtonTemp else editButtonTemp"></div>
+  <!-- <div *ngIf="editMode == false then addButtonTemp else editButtonTemp"></div> -->
+
+  <!-- 2 den fazla bir koşul varsa ngSwitchcase directive kullanabiliriz.-->
+  <!-- ngTemplateOutlet hangi template açılacaksa onu temsil eder. -->
+  <ng-container [ngSwitch]="editMode">
+    <ng-container *ngSwitchCase="false" [ngTemplateOutlet]="addButtonTemp"></ng-container>
+    <ng-container *ngSwitchCase="true" [ngTemplateOutlet]="editButtonTemp"></ng-container>
+  </ng-container>
 
 
 </ng-container>
 
-<!-- 2 den fazla bir koşul varsa ngSwitchcase -->
 
 
 <ng-template #addButtonTemp>
